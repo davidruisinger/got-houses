@@ -10,7 +10,14 @@ import {
   getHousesError,
 } from '../services/house/selectors'
 import { fetchHouseById } from '../services/house/actions'
-import { Layout, Spinner, HouseDetails, HouseItem } from '../components'
+import {
+  Layout,
+  Spinner,
+  Card,
+  HouseHeader,
+  HouseAttributes,
+  HouseItem,
+} from '../components'
 
 interface StateProps {
   error: string | null
@@ -53,13 +60,24 @@ class House extends PureComponent<StateProps & DispatchProps & RouterProps> {
     }
   }
 
+  handleBackClick = () => {
+    const { history } = this.props
+    // If the user did not come to the details page with a PUSH action,
+    // We do NOT want to initiate a goBack but send him back to home
+    if (history.action != 'PUSH') {
+      history.replace('/')
+    } else {
+      history.goBack()
+    }
+  }
+
   handleHouseClick = (id: string) => {
     const { history } = this.props
     history.push(`/houses/${id}`)
   }
 
   render() {
-    const { error, isFetching, house, getHouse } = this.props
+    const { error, isFetching, house, getHouse, history } = this.props
 
     const overlord =
       house && house.overlordId && getHouse({ id: house.overlordId })
@@ -70,7 +88,14 @@ class House extends PureComponent<StateProps & DispatchProps & RouterProps> {
       </Layout>
     ) : house ? (
       <Layout title={house.name}>
-        <HouseDetails house={house} />
+        <Card>
+          <HouseHeader
+            house={house}
+            homeInsteadBack={history.action != 'PUSH'}
+            onBack={this.handleBackClick}
+          />
+          <HouseAttributes house={house} />
+        </Card>
         {overlord && (
           <HouseItem house={overlord} onClick={this.handleHouseClick} />
         )}

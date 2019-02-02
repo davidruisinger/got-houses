@@ -23,8 +23,8 @@ const Wrapper = styled.div`
   `};
 
   ${mediaQuaery.lg`
-    width: calc(100%/6 - 6*0.2em);
-    padding-bottom: calc(100%/6 - 6*0.2em);
+    width: calc(100%/6 - 6*0.1em);
+    padding-bottom: calc(100%/6 - 6*0.1em);
   `};
 
   @media (hover: hover) {
