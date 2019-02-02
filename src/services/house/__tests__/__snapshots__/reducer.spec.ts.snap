@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`house service reducer initial state should match the snapshot 1`] = `
+Object {
+  "error": null,
+  "houses": Object {},
+  "isFetching": false,
+  "isMoreAvailable": true,
+}
+`;

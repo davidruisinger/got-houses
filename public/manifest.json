@@ -1,0 +1,15 @@
+{
+  "short_name": "GOT Houses",
+  "name": "An overview of all GOT houses",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#F0EDDC",
+  "background_color": "#34455B"
+}
