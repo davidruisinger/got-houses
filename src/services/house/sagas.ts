@@ -1,22 +1,14 @@
 import { getType } from 'typesafe-actions'
-import {
-  put,
-  takeLatest,
-  call,
-  select,
-  delay,
-  takeEvery,
-} from 'redux-saga/effects'
+import { put, takeLatest, call, select, takeEvery } from 'redux-saga/effects'
 import { BASE_URL } from './constants'
 import { House } from './types'
-import { getAllHouses } from './selectors'
+import { getAllHouses, getHouse } from './selectors'
 import * as actions from './actions'
 
 export function* fetchHousesSaga(
   action: ReturnType<typeof actions.fetchHouses>
 ) {
   try {
-    yield delay(2000)
     const { pageSize } = action.payload
     // Since this method should only allow continiously fetch more and more houses,
     // we only need the pageSize to be passed in.
@@ -50,8 +42,14 @@ export function* fetchHouseByIdSaga(
   action: ReturnType<typeof actions.fetchHouseById>
 ) {
   try {
-    yield delay(2000)
     const { id } = action.payload
+    // Check if the house is already available in the store
+    const existingHouse = yield select(getHouse, { id })
+    if (existingHouse)
+      // We don't need to fecth the house again and can resolce with an empty array
+      yield put(
+        actions.fetchHousesSuccess({ houses: [], isMoreAvailable: 'skip' })
+      )
     const response: Response = yield call(fetch, `${BASE_URL}/${id}`)
     if (!response.ok) {
       throw new Error(response.statusText)
