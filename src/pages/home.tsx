@@ -27,7 +27,7 @@ interface DispatchProps {
 class Home extends PureComponent<
   StateProps & DispatchProps & RouteComponentProps
 > {
-  static pageSize = 12
+  static pageSize = 24
 
   componentDidMount() {
     const { houses } = this.props
