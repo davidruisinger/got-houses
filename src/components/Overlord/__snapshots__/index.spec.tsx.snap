@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Overlord /> matches the snapshot 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <Styled(Component)
+    alignItems="center"
+    justifyContent="center"
+  >
+    <GiCrown
+      size="2em"
+    />
+    <styled.h3>
+      Test House
+    </styled.h3>
+    <ForwardRef>
+      <MdArrowForward
+        size="2em"
+      />
+    </ForwardRef>
+  </Styled(Component)>
+</styled.div>
+`;

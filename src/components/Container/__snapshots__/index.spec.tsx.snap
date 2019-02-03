@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container /> matches the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: left;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`<Container textAlign="center" /> matches the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`<Container textAlign="right" /> matches the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: right;
+}
+
+<div
+  className="c0"
+/>
+`;

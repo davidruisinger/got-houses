@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListItem /> matches the snapshot 1`] = `
+<Styled(Component)
+  onClick={[MockFunction]}
+>
+  <Styled(styled.div)
+    alignContent="stretch"
+    alignItems="center"
+    direction="row"
+    justifyContent="center"
+    wrap="nowrap"
+  >
+    <styled.h3>
+      Test label
+    </styled.h3>
+  </Styled(styled.div)>
+</Styled(Component)>
+`;

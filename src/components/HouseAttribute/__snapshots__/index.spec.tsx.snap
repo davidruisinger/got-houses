@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HouseAttribute /> matches the snapshot 1`] = `
+<ForwardRef
+  alignItems="stretch"
+  i={1}
+  justifyContent="space-between"
+>
+  <styled.div>
+    <GiCrossedSwords />
+  </styled.div>
+  <styled.div
+    textAlign="left"
+  >
+    <p>
+      Test data string
+    </p>
+  </styled.div>
+</ForwardRef>
+`;

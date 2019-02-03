@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HouseAttributes /> matches the snapshot 1`] = `
+<Fragment>
+  <HouseAttribute
+    data="1"
+    i={0}
+    icon={<GiBackup />}
+    key="swornMembers"
+  />
+  <HouseAttribute
+    data="foo baar"
+    i={1}
+    icon={<GiTalk />}
+    key="words"
+  />
+  <HouseAttribute
+    data="Something"
+    i={2}
+    icon={<GiVerticalBanner />}
+    key="coatOfArms"
+  />
+  <HouseAttribute
+    data="Test seat"
+    i={3}
+    icon={<GiStoneThrone />}
+    key="seats"
+  />
+  <HouseAttribute
+    data="Test Sword"
+    i={4}
+    icon={<GiCrossedSwords />}
+    key="ancestralWeapons"
+  />
+</Fragment>
+`;

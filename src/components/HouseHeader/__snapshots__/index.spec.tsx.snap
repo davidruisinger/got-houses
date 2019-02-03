@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HouseHeader /> matches the snapshot 1`] = `
+<styled.div>
+  <Styled(MdArrowBack)
+    onClick={[MockFunction]}
+  />
+  <h1>
+    Test House
+  </h1>
+  <styled.hr
+    width="50px"
+  />
+  <h3>
+    <GiPositionMarker />
+     
+    Test Region
+  </h3>
+  <h4>
+    The Testers
+  </h4>
+</styled.div>
+`;
