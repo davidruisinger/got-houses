@@ -6,7 +6,7 @@ interface Props {
 
 const Hr = styled.hr<Props>`
   border: 0;
-  background-color: ${props => props.theme.ancient_ivory};
+  background-color: ${props => props.theme.text_default};
   height: 1px;
   width: ${props => props.width};
 `

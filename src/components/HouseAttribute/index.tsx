@@ -20,8 +20,8 @@ const Icon = styled.div`
   font-size: 2.8em;
   padding: 0.2em;
 
-  color: ${props => props.theme.washington_blue};
-  background-color: ${props => props.theme.ancient_ivory};
+  color: ${props => props.theme.text_default};
+  background-color: ${props => props.theme.canvas_ground};
 `
 
 interface Props {

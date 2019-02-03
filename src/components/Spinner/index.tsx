@@ -24,10 +24,12 @@ interface DotProps {
 
 const Wrapper = styled(FlexBox)`
   height: calc(${DOT_SIZE}px * 3);
+  padding: 3em;
+  box-sizing: border-box;
 `
 
 const Dot = styled.div<DotProps>`
-  background-color: ${props => props.theme.ancient_ivory};
+  background-color: ${props => props.theme.text_default};
   border-radius: 50%;
   width: ${DOT_SIZE}px;
   height: ${DOT_SIZE}px;
