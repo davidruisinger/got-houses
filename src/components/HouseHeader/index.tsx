@@ -1,18 +1,18 @@
 import React, { FunctionComponent } from 'react'
 import { GiPositionMarker } from 'react-icons/gi'
-import { MdArrowBack, MdHome } from 'react-icons/md'
-import styled, { css } from '../_utils/styledComponents'
+import { MdArrowBack } from 'react-icons/md'
+import styled from '../_utils/styledComponents'
 import { House } from '../../services/house/types'
 import Hr from '../Hr'
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: ${props => props.theme.washington_blue};
+  background-color: ${props => props.theme.canvas_first};
   text-align: center;
   padding: 1em;
 `
 
-const buttonStyles = css`
+const BackBtn = styled(MdArrowBack)`
   position: absolute;
   top: 0.5em;
   left: 0.5em;
@@ -29,42 +29,22 @@ const buttonStyles = css`
   }
 `
 
-const HomeBtn = styled(MdHome)`
-  ${buttonStyles}
-`
-
-const BackBtn = styled(MdArrowBack)`
-  ${buttonStyles}
-`
-
 interface Props {
   house: House
   onBack: () => void
-  homeInsteadBack?: boolean
 }
 
-const HouseHeader: FunctionComponent<Props> = ({
-  house,
-  onBack,
-  homeInsteadBack,
-}) => (
+const HouseHeader: FunctionComponent<Props> = ({ house, onBack }) => (
   <Wrapper>
-    {homeInsteadBack ? (
-      <HomeBtn onClick={onBack} />
-    ) : (
-      <BackBtn onClick={onBack} />
-    )}
+    <BackBtn onClick={onBack} />
+
     <h1>{house.name}</h1>
     <Hr width="50px" />
-    <h2>
+    <h3>
       <GiPositionMarker /> {house.region}
-    </h2>
+    </h3>
     <h4>{house.titles.join(', ')}</h4>
   </Wrapper>
 )
-
-HouseHeader.defaultProps = {
-  homeInsteadBack: false,
-}
 
 export default HouseHeader
