@@ -12,7 +12,7 @@ import House from './pages/house'
 import Error from './pages/error'
 
 const RouteContainer = posed.div({
-  enter: { opacity: 1, y: 0 },
+  enter: { opacity: 1, y: 0, delay: 300 },
   exit: { opacity: 0, y: 50 },
 })
 
@@ -26,7 +26,7 @@ const AppRouter = () => (
         <BrowserRouter>
           <Route
             render={({ location }) => (
-              <PoseGroup>
+              <PoseGroup flipMove={false}>
                 <RouteContainer key={location.pathname}>
                   <Switch location={location}>
                     <Route exact path="/" component={Home} key="home" />
