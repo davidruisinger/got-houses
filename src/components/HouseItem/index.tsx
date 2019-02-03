@@ -1,49 +1,41 @@
 import React, { FunctionComponent } from 'react'
+import posed from 'react-pose'
 import styled from '../_utils/styledComponents'
 import { House } from '../../services/house/types'
-import mediaQuaery from '../_utils/mediaQuery'
+import Card from '../Card'
 import FlexBox from '../FlexBox'
 
-const Wrapper = styled.div`
-  position: relative;
-  display: inline-block;
-  margin: 0 0.1em;
-  width: calc(50% - 2 * 0.1em);
-  padding-bottom: calc(50% - 2 * 0.1em);
+const animationProps = {
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1,
+  },
+  hover: {
+    scale: 1.1,
+  },
+  press: {
+    scale: 0.95,
+  },
+}
+
+const AnimatedWrapper = styled(posed(Card)(animationProps))`
+  padding: 0.5em;
+  box-sizing: border-box;
   cursor: pointer;
-
-  ${mediaQuaery.sm`
-    width: calc(100%/3 - 3*0.1em);
-    padding-bottom: calc(100%/3 - 3*0.1em);
-  `};
-
-  ${mediaQuaery.md`
-    width: calc(25% - 4*0.1em);
-    padding-bottom: calc(25% - 4*0.1em);
-  `};
-
-  ${mediaQuaery.lg`
-    width: calc(100%/6 - 6*0.1em);
-    padding-bottom: calc(100%/6 - 6*0.1em);
-  `};
+  background: ${props => props.theme.canvas_first};
+  z-index: 9;
 
   @media (hover: hover) {
-    transition: opacity 0.3s ease-out;
-
     :hover {
-      opacity: 0.75;
+      z-index: 999999;
     }
   }
 `
 
 const Inner = styled(FlexBox)`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  box-sizing: border-box;
-  background-image: linear-gradient(to right top, #656663 0%, #d5d0c4 100%);
+  width: 100%;
+  height: 100%;
 `
 
 const Name = styled.h3`
@@ -57,11 +49,11 @@ interface Props {
 }
 
 const HouseItem: FunctionComponent<Props> = ({ house, onClick }) => (
-  <Wrapper onClick={() => onClick(house.id)}>
-    <Inner alignItems="center" justifyContent="center">
+  <AnimatedWrapper onClick={() => onClick(house.id)}>
+    <Inner justifyContent="center" alignItems="center">
       <Name>{house.name}</Name>
     </Inner>
-  </Wrapper>
+  </AnimatedWrapper>
 )
 
 export default HouseItem
