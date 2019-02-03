@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import posed from 'react-pose'
 import styled from '../_utils/styledComponents'
-import { House } from '../../services/house/types'
 import Card from '../Card'
 import FlexBox from '../FlexBox'
 
@@ -44,16 +43,16 @@ const Name = styled.h3`
 `
 
 interface Props {
-  house: House
+  label: string
   onClick: (id: string) => void
 }
 
-const HouseItem: FunctionComponent<Props> = ({ house, onClick }) => (
-  <AnimatedWrapper onClick={() => onClick(house.id)}>
+const ListItem: FunctionComponent<Props> = ({ label, onClick }) => (
+  <AnimatedWrapper onClick={onClick}>
     <Inner justifyContent="center" alignItems="center">
-      <Name>{house.name}</Name>
+      <Name>{label}</Name>
     </Inner>
   </AnimatedWrapper>
 )
 
-export default HouseItem
+export default ListItem

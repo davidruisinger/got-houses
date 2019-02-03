@@ -1,13 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from '../_utils/styledComponents'
 import mediaQuery from '../_utils/mediaQuery'
-import HouseItem from '../HouseItem'
-import { House } from '../../services/house/types'
-
-interface Props {
-  houses: House[]
-  onClick: (id: string) => void
-}
 
 // Inspired by https://medium.com/cloudaper/how-to-create-a-flexible-square-grid-with-css-grid-layout-ea48baf038f3
 const Wrapper = styled.div`
@@ -38,12 +31,8 @@ const Wrapper = styled.div`
   }
 `
 
-const HouseList: FunctionComponent<Props> = ({ houses, onClick }) => (
-  <Wrapper>
-    {houses.map((house, i) => (
-      <HouseItem key={`${i}_${house.name}`} house={house} onClick={onClick} />
-    ))}
-  </Wrapper>
+const List: FunctionComponent<{}> = ({ children }) => (
+  <Wrapper>{children}</Wrapper>
 )
 
-export default HouseList
+export default List

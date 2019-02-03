@@ -11,7 +11,7 @@ import {
 } from '../services/house/selectors'
 import { fetchHouses } from '../services/house/actions'
 import { House } from '../services/house/types'
-import { Layout, HouseList, Spinner } from '../components'
+import { Layout, List, ListItem, Spinner } from '../components'
 
 interface StateProps {
   error: string | null
@@ -86,7 +86,15 @@ class Home extends PureComponent<
     ) : (
       <Layout title="Overview">
         <h1>Game of Thrones - Houses</h1>
-        <HouseList houses={houses} onClick={this.handleHouseClick} />
+        <List>
+          {houses.map((house, i) => (
+            <ListItem
+              key={`${i}_${house.name}`}
+              label={house.name}
+              onClick={() => this.handleHouseClick(house.id)}
+            />
+          ))}
+        </List>
         {isHousesFetching && <Spinner />}
         {!moreHousesAvailable && <p>That's all</p>}
       </Layout>
