@@ -33,7 +33,9 @@ interface Props {
 const HouseAttribute: FunctionComponent<Props> = ({ icon, data, i }) => (
   <AnimatedWrapper i={i} justifyContent="space-between" alignItems="stretch">
     <Icon>{icon}</Icon>
-    <Container>{data}</Container>
+    <Container>
+      <p>{data}</p>
+    </Container>
   </AnimatedWrapper>
 )
 
