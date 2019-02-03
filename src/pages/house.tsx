@@ -51,6 +51,8 @@ class House extends PureComponent<StateProps & DispatchProps & RouterProps> {
       // Let's also fetch the overlords
       this.fetchOverlord()
     }
+    // Scroll to the top of the page
+    window.scrollTo(0, 0)
   }
 
   fetchOverlord() {

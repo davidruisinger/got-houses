@@ -12,7 +12,7 @@ import House from './pages/house'
 import Error from './pages/error'
 
 const RouteContainer = posed.div({
-  enter: { opacity: 1, y: 0, delay: 200, beforeChildren: true },
+  enter: { opacity: 1, y: 0, beforeChildren: true },
   exit: { opacity: 0, y: 20 },
 })
 
